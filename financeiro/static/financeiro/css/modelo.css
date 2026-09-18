@@ -1,0 +1,89 @@
+body{
+    background-color: black;
+    margin: 0px;
+    padding: 0px;
+    min-height: 100vh; /* Usei um fallback aqui, para poder estiilizar em navegadores mais antigos*/
+    min-height: 100dvh; /* Aqui eu uso a altura dinamica */
+    display:flex;
+    flex-direction:column;
+}
+
+main{
+    flex:1; 
+    /*
+    Abreviação de
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 0%;
+    Eu digo para ele ocupar todo o espaço de body que restar de header e footer
+    */
+}
+
+header{
+    width: 100%;
+}
+
+.topo{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 8px;
+    font-size: clamp(10px, 2vw, 19px);
+}
+
+.topo2{
+    display: flex;
+    gap: 10px;
+}
+
+header button{
+    border: none;
+    background-color: transparent;
+    color: #009eff;
+    font-size: clamp(10px, 2vw, 20px);
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+}
+
+header button:active{
+    transform: scale(0.95);
+}
+
+.topo2 span{
+    color: white;
+}
+
+header h3{
+    color: white;
+}
+
+.logo{
+    color: orange;
+    padding: 0 2px;
+}
+
+.menu{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: clamp(10px, 2vw, 22px);
+    background-color: orange;
+    height: 50px;
+    gap: 30px;
+}
+
+.menu a{
+    color: white;
+    text-decoration: none;
+}
+
+footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer p{
+    color: white;
+}

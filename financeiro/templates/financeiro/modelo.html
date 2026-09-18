@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}AFAC FINANÇAS {% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'financeiro/css/modelo.css' %}">
+    {% block extra_css %}{% endblock %}
+</head>
+<body>
+    <header>
+        <div class="topo">
+            <div class="topo1">
+                <h3><span class="logo">AFAC</span>FINANÇAS</h3>
+            </div>
+            <div class="topo2">
+                <span>Olá, {{ user.username }}</span>
+                <form action="{% url 'logout' %}" method="POST">
+                {% csrf_token %}
+                <button type="submit">Sair</button>
+            </form>
+            </div>
+        </div>
+        <div class="menu">
+            <a href="{% url 'home' %}">Inicio</a>
+            <a href="{% url 'preReceita' %}">Receitas</a>
+            <a href="{% url 'preDespesa' %}">Despesas</a>
+            <a href="{% url 'caixinhas' %}">Caixinhas</a>
+            <a href="{% url 'escolherPrevisao' %}">Previsão</a>
+        </div>
+    </header>
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+    <footer>
+        <p>© 2026 AFACFinanças</p>
+    </footer>
+    {% block js_extra %}
+    {% endblock %}
+
+</body>
+</html>

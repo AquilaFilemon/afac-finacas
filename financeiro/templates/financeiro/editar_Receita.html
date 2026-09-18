@@ -1,0 +1,23 @@
+{% extends 'financeiro/modelo.html' %}
+{% load static %}
+
+{% block extra_css %} <link rel="stylesheet" href="{% static  'financeiro/css/editar_receita.css' %}"> {% endblock %}
+
+{% block title %} AFAC Finanças | Editar Receita {% endblock %}
+
+{% block content %} 
+    <div class="principal">
+        <h1>Editar Receita</h1>
+        <form method="POST">
+            {% csrf_token %}
+            {{ form.valor }}
+            {{ form.descricao }}
+            {{ form.data }}
+            {{ form.categoria }}
+            <a href="{% url 'categoriasReceita' %}">Editar Categorias</a>
+            <a href="{% url 'criarCategoriaReceitaAdicionar' %}">Adicionar Categoria</a>
+            <button type="submit">Salvar</button>
+        </form>
+    </div>
+
+{% endblock %}

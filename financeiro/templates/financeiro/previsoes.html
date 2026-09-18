@@ -1,0 +1,50 @@
+{% extends 'financeiro/modelo.html' %}
+{% load static %}
+
+{% block title %} AFAC Finaças | previsões {% endblock %}
+
+{% block extra_css %} <link rel="stylesheet" href="{% static 'financeiro/css/previsoes.css' %}"> {% endblock %}
+
+{% block content %}
+    <div class="principal">
+        <div class="secundario">
+            <div class="receitas">
+                <a href="{% url 'adiconarPrevisaoReceita' %}" class="a_previsoes"><span>+</span> Adicionar Receitas</a>
+                <h1>Receitas</h1>
+                <div class="contentReceitas">
+                    {% for receita in receitas %}
+                    <div class="receitas">
+                        {{ receita.nome }}
+                        {{ receita.valor }}
+                        <a href="{% url 'excluirPrevisao' receita.id %}" class="link" onclick="alert('Deseja Mesmo Excluir Essa Previsão?')">Excluir</a>
+                        <a href="{% url 'editarPrevisao' receita.id %}" class="link">Editar</a>
+                    </div>
+                    {% empty %}
+                    <h3>Sem receitas Cadastradas</h3>
+                    {% endfor %}
+                </div>        
+            </div>
+            <div class="despesas">
+                <a href="{% url 'adicionarPrevisaoDespesa' %}" class="a_previsoes"><span>+</span> Adicionar Despesas</a>
+                <h1>Depesas</h1>
+                <div class="contentDespesas">
+                    {% for despesa in despesas %}
+                    <div class="despesas">
+                        {{ despesa.nome }}
+                        {{ despesa.valor }}
+                        <a href="{% url 'excluirPrevisao' despesa.id %}" class="link" onclick="alert('Deseja Mesmo Excluir essa Previsão?')"> Excluir </a>
+                        <a href="{% url 'editarPrevisao' despesa.id %}" class="link">Editar</a>
+                    </div>
+                        {% empty %}
+                    <h3>Sem despesas Cadastradas</h3>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        <div class="somatorios">
+            <h3>R$ {{ soma_receita }}</h3>
+            <h3>R$ {{ soma_despesa }}</h3>
+            <h3>R$ {{ resultado }}</h3>
+        </div>
+    </div>
+{% endblock %}

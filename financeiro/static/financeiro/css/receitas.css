@@ -1,0 +1,51 @@
+main{
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: clamp(0.5rem, 2vw, 1.25rem);
+}
+
+main a{
+    color: orange;
+    width: 100%;
+    text-decoration: none;
+    margin: 0 10% 3% 0;
+    text-align: right;
+
+}
+
+main th{
+    text-align: left;
+}
+main td{
+    text-align: left;
+    padding: 1% 0 0 0;
+}   
+
+main table{
+    width: 90%;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+th:nth-child(1) {width: 14%;}
+th:nth-child(2) {width: 34%;}
+th:nth-child(3) {width: 14%;}
+th:nth-child(4) {width: 15%;}
+th:nth-child(5) {width: 11.5%;}
+th:nth-child(6) {width: 11.5%;}
+/*
+Essa é uma escrita especial 
+É um padrão  de pseudo-classe
+th seleciona o cabeçalho
+: define que eu estou aplicando uma pseudo-classe
+nth-child(1) seleciino o primeiro th da tabela
+*/
+
+
+.tabela_vazia{
+    text-align: center;
+    padding: 5%;
+}
+

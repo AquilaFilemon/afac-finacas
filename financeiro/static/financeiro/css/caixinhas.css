@@ -1,0 +1,63 @@
+body{
+    color: white;
+    font-size: clamp(0.8rem, 2vw, 1.2rem);
+}
+
+.div_a{
+    width: 90%;
+    text-align: right;
+    padding: 10px 0;
+}
+
+.div_a a{
+    color: orange;
+    text-decoration: none;
+}
+
+.principal{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.pricipal_caixinhas{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;  
+}
+
+a{
+    color: white;
+    text-decoration: none;
+}
+
+.caixinhas{
+    width: 18vh;
+    height: 25vh;
+    padding: 5px;
+    border: 1px solid white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.superior{
+    text-align: center;
+}
+
+.meio{
+    text-align: center;
+}
+
+.inferior{
+    text-align: center; 
+}
+
+.inferior a{
+    margin: 3px;
+}

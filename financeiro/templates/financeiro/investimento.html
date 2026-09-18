@@ -1,0 +1,16 @@
+{% extends 'financeiro/modelo.html' %}
+{% load static %}
+{% block title %} AFAC FINANÇAS | Investimento {% endblock %}
+{% block extra_css %} <link rel="stylesheet" href="{% static 'financeiro/css/investimento.css' %}"> {% endblock %}
+
+{% block content %}
+    <div class="principal">
+        <div class="relatorio">
+            <p>Total Investido: <span class="total">R$ 0,00</span></p>
+            <p>Ações/FIIs: <span>R$ 0,00</span></p>
+            <p>Renda Fixa: <span>R$ 0,00</span></p>
+            <p>Cripto: <span>R$ 0,00</span></p>
+        </div>
+        <div class="opcoes"></div>
+    </div>
+{% endblock %}

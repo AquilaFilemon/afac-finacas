@@ -1,0 +1,19 @@
+{% extends 'financeiro/modelo.html' %}
+{% load static %}
+
+{% block title %} AFAC Finanças | Despesas {% endblock %}
+{% block extra_css %} <link rel="stylesheet" href="{% static 'financeiro/css/preDespesa.css' %}"> {% endblock %}
+
+{% block content %}
+    <div class="primario">
+        <div class="secundario">
+            <h1>Quais Despesas Deseja Consultar?</h1>
+            <form method="Post">
+                {% csrf_token %}
+                    {{ form.mes }}
+                    {{form.ano}}
+                <button type="submit">Seguinte</button>
+            </form>
+        </div>
+    </div>        
+{% endblock %}

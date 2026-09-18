@@ -1,0 +1,45 @@
+body{
+    color: white;
+}
+
+.primario{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 60vh;
+}
+
+h1{
+    text-align: center;
+}
+
+.secundario{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+}
+
+select{
+    width: 35vh;   
+    height: 6vh;
+    margin: 10px;
+}
+
+input{
+    width: 34vh;   
+    height: 5vh;
+    margin: 10px;
+}
+
+button{
+    padding: 2vh 10vh;
+    margin: 10px;
+}

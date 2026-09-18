@@ -1,0 +1,18 @@
+{% extends 'financeiro/modelo.html' %}
+{% load static %}
+{% block extra_css %} <link rel="stylesheet" href="{% static 'financeiro/css/escolherPrevisao.css' %}"> {% endblock %}
+
+{% block title %} AFAC Finaças | Escolher Previsões de Gastos {% endblock %}
+
+{% block content %}
+    <div class="principal">
+        <h1>PREVISÃO DE GASTOS</h1>
+        <h3>ESCOLHA MÊS E ANO</h3>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.mes }}
+            {{ form.ano }}
+            <button type="submit">Avançar</button>
+        </form>
+    </div>
+{% endblock %}

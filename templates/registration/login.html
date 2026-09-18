@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+    <title>Login | AFAC Finanças</title> 
+</head>
+<body>
+    <main>
+        <h1>AFAC FINANÇAS</h1>
+        <div class="login">
+            <h2>Login</h2>
+            <form method="post">
+                {% csrf_token %}
+                <!-- {{ form.as_p }} -->
+                <!-- Aqui eu uso um comando de mostrar variáveis. Eu exibo o formulario de autenticação gerado pelo Contrib do Python como p-->
+                {{ form.username }}
+                {{ form.password }}
+            <button type="submit">
+                Login
+            </button>
+            <a href="{% url 'cadastro' %}">Cadastrar</a>
+            <a href="{% url 'password_reset' %}">Esqueceu a senha?</a>      
+            {{ form.non_field_errors }}
+        </form>
+        </div>
+    </main>
+</body>
+</html>

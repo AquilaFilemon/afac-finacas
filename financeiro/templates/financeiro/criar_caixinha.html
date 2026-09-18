@@ -1,0 +1,18 @@
+{% extends 'financeiro/modelo.html' %}
+{% load static %}
+
+{% block title%} AFAC Finanças | Criar Caixinha {% endblock %}
+
+{% block extra_css %} <link rel="stylesheet" href="{% static 'financeiro/css/criarCaixinha.css' %}"> {% endblock %}
+
+{% block content %}
+    <div class="principal">
+        <h1>Criar Caixinha</h1>
+        <form method="POST">
+            {% csrf_token %}
+            <input type="text" name="nome" id="id_nome" placeholder="Nome da Caixinha">
+            <input type="number" name="valor" id="id_valor" placeholder="Valor Inicial">
+            <button type="submit">Criar</button>
+        </form>
+    </div>
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends 'financeiro/modelo.html' %}
+{% load static %}
+
+{% block title %} AFAC Finanças | Categoria {% endblock %}
+
+{% block extra_css %} <link rel="stylesheet" href="{% static 'financeiro/css/preAdicaoReceita.css' %}"> {% endblock %}
+
+{% block content %} 
+    <div class="principal">
+        <h2>Escolha a Categoria da Receita</h2>
+        <form method="post">
+            {% csrf_token %}
+            {{form.errors}}
+            {{form.categoria}}
+            <a  class="a" href="{% url 'criarCategoriaReceitaAdicionar' %}">Adicionar Categoria</a>
+            <a href="{% url 'categoriasReceita' %}" class="a"> Editar Categorias</a>
+            <button type="submit">Próximo</button>
+        </form>
+    </div>  
+{% endblock %}

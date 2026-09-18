@@ -1,0 +1,4 @@
+Fazer uma view só para categoria da receita e da despesa
+
+Nessa view se não tiver a categoria a pessoa vai adicionar e depois retorna para a view de categorização da receita
+

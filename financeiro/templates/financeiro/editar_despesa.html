@@ -1,0 +1,20 @@
+{% extends 'financeiro/modelo.html' %}
+{% load static %}
+
+{% block title %} AFAC Finanças | Editar Despesas {% endblock %}
+
+{% block extra_css %} <link rel="stylesheet" href="{% static 'financeiro/css/editar_despesa.css' %}"> {% endblock %}
+
+{% block content %} 
+    <div class="principal">
+        <h1>Editar Despesa</h1>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.valor }}
+            {{ form.descricao }}
+            {{ form.data }}
+            {{ form.categoria }}
+            <button type="submit">Salvar</button>
+        </form>
+    </div>
+{% endblock %}

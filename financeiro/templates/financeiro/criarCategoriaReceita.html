@@ -1,0 +1,17 @@
+{% extends 'financeiro/modelo.html' %}
+{% load static %}
+
+{% block title %} AFAC Finaças | Cria Categoria {% endblock %}
+
+{% block extra_css %} <link rel="stylesheet" href="{% static 'financeiro/css/criarCategoriaReceita.css' %}"> {% endblock %}
+
+{% block content %} 
+    <div class="principal">
+        <h2>Criar Categoria</h2>
+        <form method="post">
+            {% csrf_token %}
+            <input type="text" name="categoria" id="id_valor" placeholder="Categoria">
+            <button type="submit">Salvar</button>
+        </form>
+    </div>
+{% endblock %}

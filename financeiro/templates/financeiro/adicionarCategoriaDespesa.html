@@ -1,0 +1,17 @@
+{% extends 'financeiro/modelo.html' %}
+{% load static %}
+
+{% block extra_css %} <link rel="stylesheet" href="{% static 'financeiro/css/adicionarCategoriaDespesa.css' %}"> {% endblock %}
+
+{% block title %} AFAC Finanças | Adicionar Categoria {% endblock %}
+
+{% block content %}
+    <div class="principal">
+        <h1>Adicionar Categoria</h1>
+        <form method="post">
+            {% csrf_token %}
+            <input type="text" name="categoria" id="categoria.id" placeholder="Categoria">
+            <button type="submit">Adicionar</button>
+        </form>
+    </div>
+{% endblock %}

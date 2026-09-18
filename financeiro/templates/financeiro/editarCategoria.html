@@ -1,0 +1,17 @@
+{% extends 'financeiro/modelo.html' %}
+{% load static %}
+
+{% block title %} AFAC Finaças | Editar Categoria {% endblock %}
+
+{% block extra_css %} <link rel="stylesheet" href="{% static 'financeiro/css/editarCategoria.css' %}"> {% endblock %}
+
+{% block content %}
+    <div class="principal">
+        <h1>Editar Categoria</h1>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.categoria }}
+            <button type="submit">Salvar</button>
+        </form>
+    </div>
+{% endblock %}

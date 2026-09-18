@@ -1,0 +1,36 @@
+{% extends 'financeiro/modelo.html' %}
+{% load static %}
+
+{% block title %} AFAC FINANÇAS | Despesas {% endblock title %}
+
+{% block extra_css %} <link rel="stylesheet" href="{% static 'financeiro/css/despesas.css' %}"> {% endblock extra_css %}
+
+{% block content %}
+    <h1>Despesas</h1>
+    <a href="{% url 'escolherCategoriaDespesa' %}">Adiconar Receitas</a>
+
+    <table>
+        <thead>
+                <th>Data</th>
+                <th>Descrição</th>
+                <th>Categoria</th>
+                <th>Valor</th>
+        </thead>
+        <tbody>
+            {% for despesa in despesas %}
+            <tr>
+                <td>{{ despesa.data|date:'d/m/Y' }}</td>
+                <td>{{ despesa.descricao }}</td>
+                <td>{{ despesa.categoria }}</td>
+                <td>R$ {{ despesa.valor }}</td>
+                <td><a href="{% url 'excluir_despesas' despesa.id %}" onclick="return confirm('Deseja realmente excluir essa despesa?')">Excluir</a></td>
+                <td><a href="{% url 'editar_despesa' despesa.id%}">Editar</a></td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="4" class="tabela_vazia">Nenhuma Despesa Encontrada</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock content %}

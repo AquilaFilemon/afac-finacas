@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+    <title>AFAC Finanças</title>
+</head>
+<body>
+    <header>
+        <div class="login">
+            <span class="menu2">Olá, {{ user.username }}</span>
+            <form action="{% url 'logout' %}" method="POST" class="menu2">
+                {% csrf_token %}
+                <button type="submit">Sair</button>
+            </form>
+        </div>
+    </header>
+    <main>
+        <h1>AFAC FINANÇAS</h1>
+        <div class="relatorio">
+            <p class="saldo">Saldo do Mês: <b><span>R$ {{ saldo_atual }}</span></b></p>
+            <p>Receitas do Mês: <span class="infomacao">R$ {{ receita_mes }}</span></p>
+            <p>Despesas do Mês: <span class="infomacao">R$ {{ despesa_mes }}</span></p>
+        </div>
+        <div class="menu">
+                <a href="{% url 'preReceita' %}">Receitas</a>
+                <a href="{% url 'preDespesa' %}">Despesas</a>
+                <a href="{% url 'caixinhas' %}">Caixinhas</a>   
+                <a href="{% url 'escolherPrevisao' %}">Previsão de Gastos</a>
+        </div>
+    </main>
+    <footer></footer>
+</body>
+</html>

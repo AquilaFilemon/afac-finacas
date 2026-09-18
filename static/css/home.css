@@ -1,0 +1,78 @@
+body{
+    background-color: black;
+    margin: 0px;
+    padding: 0px;
+}
+
+header{
+    margin: 1%;
+}
+
+.relatorio{
+    color: white;
+    margin: 0 0 0 0;
+    font-size: clamp(12px, 1vw, 22px);
+    border: 1px solid white;
+    width: 35vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.infomacao{
+    color: white;
+}
+
+.saldo{
+    color: #009eff;
+}
+
+.relatorio p{
+    margin: 5% 0% 5% 5%;
+}
+
+.login{
+    color: white;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    gap: 2%;
+    font-size: clamp(15px, 2vw, 22px);
+}
+
+.login button{
+    background-color: transparent;
+    text-decoration: none;
+    border: none;
+    color: #009eff;
+    font-size: 17px;
+}
+
+main{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 0px;
+}
+
+main h1{
+    color: orange;
+}
+
+.menu{
+    width: 35vh;
+    padding: 8vh 0 8vh 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border: 1px solid white;
+    font-size: clamp(16px, 3vw, 22px);
+    gap: 30px;
+}
+
+main a{
+    text-decoration: none;
+    color: #009eff;
+}

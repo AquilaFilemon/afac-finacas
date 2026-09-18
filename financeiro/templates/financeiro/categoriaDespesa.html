@@ -1,0 +1,24 @@
+{% extends 'financeiro/modelo.html' %}
+{% load static %}
+
+{% block extra_css %} <link rel="stylesheet" href="{% static 'financeiro/css/categoriaDespesa.css' %}"> {% endblock %}
+
+{% block title %} AFAC Finaças | Categorias de Despesa {% endblock %}
+
+{% block content %} 
+    <div class="principal">
+        <h1>Categorias Cadastradas</h1>
+        {% for categoria in categorias %}
+            <div class="categorias">
+                <h3>{{categoria.categoria}}</h3>
+                <div class="opcoes">
+                    <a href="{% url 'editarCategoriaDespesa' categoria.id %}">Editar</a>
+                    <a href="{% url 'excluirCategoriaDespesas' categoria.id%}" onclick="confirm('Deseja Realmente Excluir?')">excluir</a>
+                </div>
+            </div>
+        {% empty %}
+            <h3>Nenhuma Categoria Cadastrada</h3>
+        {% endfor %}
+
+    </div>
+{% endblock %}

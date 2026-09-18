@@ -1,0 +1,22 @@
+{% extends 'financeiro/modelo.html' %}
+{% load static %}
+
+{% block extra_css %} <link rel="stylesheet" href="{% static 'financeiro/css/escolherCategoriaDespesa.css' %}"> {% endblock %}
+
+{% block title %} AFAC Finanças | Escolher Categoria {% endblock %}
+
+{% block content %}
+
+    <div class="principal">
+        <h1>Escolha a Categoria da Despesa</h1>
+        <form method="post">
+            {% csrf_token %}
+            {{form.categoria}}
+            <a href="{% url 'adicionarCategoriaDespesa' %}" class="a">Adicionar Categoria</a>
+            <a href="{% url 'categoriasDepesas' %}" class="a">Editar Categoria</a>
+            <button type="submit">Avançar</button>
+        </form>
+
+    </div>
+
+{% endblock %}

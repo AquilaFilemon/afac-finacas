@@ -1,0 +1,21 @@
+{% extends 'financeiro/modelo.html' %}
+{% load static %}
+
+{% block extra_css %} <link rel="stylesheet" href="{% static 'financeiro/css/categoria.css'%}"> {% endblock %}
+
+{% block title %} AFAC Finanças | Categorias {% endblock %}
+
+{% block content %} 
+<div class="principal">
+    <h1>Categorias</h1>
+    {% for categoria in categorias %}
+        <div class="categorias">
+            <h3>{{categoria.categoria}}</h3>
+            <a href="{% url 'editarCategoriaReceita' categoria.id %}">Editar</a>
+            <a href="{% url 'excluirCategoriaReceita' categoria.id %}" onclick="return confirm('Tem certeza que deseja excluir essa categoria?')" >Excluir</a>
+         </div>   
+        {% empty %}
+        <h2>Sem Categorias Cadastradas</h2>
+        {% endfor %}
+</div>
+{% endblock %}

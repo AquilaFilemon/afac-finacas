@@ -1,0 +1,20 @@
+body{
+    color: white;
+}
+
+.principal{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.categorias{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.categorias *{
+    margin: 10px 3px;
+}

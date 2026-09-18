@@ -1,0 +1,36 @@
+{% extends 'financeiro/modelo.html' %}
+
+{% load static %}
+
+{% block title %} AFAC FINANÇAS | Receitas {% endblock title %}
+
+{% block extra_css %} <link rel="stylesheet" href="{% static 'financeiro/css/receitas.css'  %}"> {% endblock extra_css %}
+
+{% block content %}
+    <h1>Receitas</h1>
+        <a href="{% url 'preAdicaoReceita' %}">Adiconar Receitas</a>
+    <table>
+        <thead>
+            <th>Data</th>
+            <th>Descrição</th>
+            <th>Categoria</th>
+            <th>Valor</th>
+        </thead>
+        <tbody>
+            {% for receita in receitas %}
+            <tr>
+                <td>{{ receita.data|date:"d/m/Y" }}</td>
+                <td>{{ receita.descricao }}</td>
+                <td>{{ receita.categoria }}</td>
+                <td>R$ {{ receita.valor }}</td>
+                <td><a href="{% url 'excluir_receita' receita.id%}" onclick="return confirm('Deseja realmente excluir essa receita?')">Excluir</a></td>
+                <td><a href="{% url 'editar_receita' receita.id %}">Editar</a></td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="4" class="tabela_vazia">Nenhuma Receita Encontrada</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock content %}

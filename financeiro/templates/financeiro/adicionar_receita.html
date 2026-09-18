@@ -1,0 +1,19 @@
+{% extends 'financeiro/modelo.html' %}
+{% load static %}
+
+{% block title %} AFAC FINAÇAS | ADICONAR RECEITAS {% endblock title %}
+{% block extra_css %} <link rel="stylesheet" href="{% static 'financeiro/css/adicionar_receitas.css' %}"> {% endblock extra_css %} 
+
+
+{% block content %}
+    <div class="div_adiconar_receitas">
+        <h3>ADICIONAR RECEITA</h3>
+        <form method="POST" class="formulario_adiconar_receitas">
+            {% csrf_token %}
+                <input type="number" name="valor" id="id_valor" step="0.01" placeholder="Quanto você Recebeu?">
+                <input type="text" name="descricao" id="id_descricao" placeholder="Descriçao da Receita">
+                <input type="date" name="data" id="id_data" placeholder="Data">
+                <button type="submit">Adicionar</button>
+        </form>
+    </div>
+{% endblock content %}

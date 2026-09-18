@@ -1,0 +1,17 @@
+{% extends 'financeiro/modelo.html' %}
+{% load static %}
+{% block title %} AFAC FINAÇAS | ADICONAR DESPESAS {% endblock title %}
+{% block extra_css %} <link rel="stylesheet" href="{% static 'financeiro/css/adicionar_despesas.css' %}"> {% endblock extra_css %}
+
+{% block content %}
+    <div class="adicionar_despesas">
+        <h2>Adicionar Despesa</h2>
+        <form method="POST" class="formulario_adiconar_despesas">
+                {% csrf_token %}
+                <input type="number" name="valor" id="id_valor" step="0.01" placeholder="Quanto Você Gastou?">
+                <input type="text" name="descricao" id="id_descricao" placeholder="Descrição da Despesa" >
+                <input type="date" name="data" id="id_data" placeholder="Data">
+                <button type="submit">Adicionar</button>
+        </form>
+    </div>
+{% endblock content %}
