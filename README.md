@@ -2,6 +2,8 @@
 
 Sistema de finanças pessoais desenvolvido em Django, para acompanhamento de receitas, despesas, investimentos e planejamento financeiro.
 
+![Dashboard do AFAC Finanças](docs/dashboard.png)
+
 ## Funcionalidades
 
 - **Receitas e Despesas**: cadastro e acompanhamento do mês atual
