@@ -50,8 +50,13 @@ Sistema de finanças pessoais desenvolvido em Django, para acompanhamento de rec
 6. Inicie o servidor:
 ```bash
    python manage.py runserver 0.0.0.0:8000
-   Acesse: Endereço_IPV4:8000
 ```
+
+7. Acesse a página:
+```CMD
+    ipconfig
+```
+Acesse: 'http://Endereço_IPV4:8000'
 
 ## Status
 
